@@ -1,2 +1,21 @@
-html,body{background-color:#fc0;color:#fff;padding:0;margin:0;font-size:18px}
-h1{font-size:13px}
+html,body{background-color:#222;color:#fff;padding:0;margin:0;font-size:18px;font-family:'Novecentosanscondensed-DemiBold'}
+header{position:fixed;top:-15px;left:11px;font-size:80px;color:#aaa;-webkit-transition:-webkit-transform 250ms ease-in-out;-moz-transition:-moz-transform 250ms ease-in-out;-o-transition:-o-transform 250ms ease-in-out;-ms-transition:-ms-transform 250ms ease-in-out;transition:transform 250ms ease-in-out;white-space:nowrap}
+a,a:visited{color:#666;text-decoration:none;-webkit-transition:color 200ms ease-in-out;-moz-transition:color 200ms ease-in-out;-o-transition:color 200ms ease-in-out;-ms-transition:color 200ms ease-in-out;transition:color 200ms ease-in-out;}
+a:hover,a:visited:hover{color:#444}
+a.sel,a:visited.sel{color:#aaa;cursor:default}
+#menu{position:fixed;top:0;right:0;font-size:32px;}
+#menu ul{list-style-type:none;padding-top:0;-webkit-transition:all 200ms ease-in-out;-moz-transition:all 200ms ease-in-out;-o-transition:all 200ms ease-in-out;-ms-transition:all 200ms ease-in-out;transition:all 200ms ease-in-out;}
+#menu ul li{display:inline;padding:0 30px 0 0;}
+#menu ul li:last-child{padding:0 17px 0 0}
+.topic_heading{background-color:#111;color:#aaa;position:absolute;top:72px;left:0;right:0;height:40px;font-size:30px;padding:4px 0 0 11px;-webkit-transition:all 200ms ease-in-out;-moz-transition:all 200ms ease-in-out;-o-transition:all 200ms ease-in-out;-ms-transition:all 200ms ease-in-out;transition:all 200ms ease-in-out}
+@media only screen and (max-width: 992px){#menu{font-size:24px;}
+#menu ul{padding-top:13px;}
+#menu ul li{padding-right:20px}
+}@media only screen and (max-width: 768px){header{-webkit-transform:scale(.8) translate(-50px,-5px);-moz-transform:scale(.8) translate(-50px,-5px);-o-transform:scale(.8) translate(-50px,-5px);-ms-transform:scale(.8) translate(-50px,-5px);transform:scale(.8) translate(-50px,-5px)}
+#menu{font-size:20px;}
+#menu ul{padding-top:15px;}
+#menu ul li{padding-right:10px}
+.topic_heading{top:62px}
+}@media only screen and (max-width: 480px){header{-webkit-transform:scale(.5) translate(-200px,-20px);-moz-transform:scale(.5) translate(-200px,-20px);-o-transform:scale(.5) translate(-200px,-20px);-ms-transform:scale(.5) translate(-200px,-20px);transform:scale(.5) translate(-200px,-20px)}
+.topic_heading{top:46px;font-size:24px;height:32px}
+}

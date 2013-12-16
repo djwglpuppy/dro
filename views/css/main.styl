@@ -1,9 +1,93 @@
 html, body 
-    background-color #ffcc00
+    background-color #222
     color white
     padding 0
     margin 0
     font-size 18px
+    font-family: 'Novecentosanscondensed-DemiBold'
 
-h1
-    font-size 13px
+header
+    position fixed
+    top -15px
+    left 11px
+    font-size 80px
+    color #aaa
+    transition transform 250ms ease-in-out
+    whitespace nowrap
+
+a, a:visited
+    color #666
+    text-decoration none
+    transition color 200ms ease-in-out
+    &:hover
+        color #444
+    &.sel
+        color #aaa
+        cursor default
+
+
+#menu
+    position fixed
+    top 0
+    right 0
+    font-size 32px
+    ul
+        list-style-type none
+        padding-top 0px
+        transition all 200ms ease-in-out
+        li
+            display inline
+            padding 0px 30px 0px 0px
+            &:last-child 
+                padding 0px 17px 0px 0px
+
+.topic_heading
+    background-color #111
+    color #aaa
+    position absolute
+    top 72px
+    left 0px
+    right 0px
+    height 40px
+    font-size 30px
+    padding 4px 0px 0px 11px
+    transition all 200ms ease-in-out
+
+@media only screen and (max-width: 992px)
+    #menu
+        font-size 24px
+        ul
+            padding-top 13px
+            li
+                padding-right 20px
+
+@media only screen and (max-width: 768px)
+    header
+        transform scale(.8) translate(-50px, -5px)
+
+    #menu
+        font-size 20px
+        ul
+            padding-top 15px
+            li
+                padding-right 10px
+
+    .topic_heading
+        top 62px
+    
+
+// @media only screen and (max-width: 600px)
+//     header
+//         transform scale(.8) translate(-50px, -5px)
+
+
+
+@media only screen and (max-width: 480px)
+    header
+        transform scale(.5) translate(-200px, -20px)
+
+    .topic_heading
+        top 46px
+        font-size 24px
+        height 32px
+
