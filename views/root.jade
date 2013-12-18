@@ -1,15 +1,78 @@
 !!!5
-html(style='background-color: #222;')
+html(style='background-color: #2e2e2e;')
     head
-        meta(name="viewport", content="initial-scale=1.0")
+        title David K Roberts
+        //- meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="apple-mobile-web-app-status-bar-style", content="black")
+        meta(name="apple-mobile-web-app-title", content="DAVID K ROBERTS")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
+        link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,800', rel='stylesheet', type='text/css')
+
+        link(rel='stylesheet', href='/css/icons.css')
         link(rel='stylesheet', href='/css/fonts.css')
         link(rel='stylesheet', href='/css/main.css')
     body
-        header david k roberts
+        header DAVID K ROBERTS
+        #menu_icon: i.icon-menu
         #menu
             ul
-                li: a(href='#').sel About
-                li: a(href='#') Projects
-                li: a(href='#') Experience
-                li: a(href='#') Contact
-        #about.topic_heading About
+                li: a(href='#').sel ABOUT
+                li: a(href='#') PROJECTS
+                li: a(href='#') EXPERIENCE
+                li: a(href='#') CONTACT
+
+        .topic_heading ABOUT
+        .responsiveState
+
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+    script(src="/js/jquery.hammer.js")
+
+    script
+        var IS_MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        var tapOrClick = function(sel, method){
+            if (IS_MOBILE) {
+                $(sel).hammer().on("tap", method);
+            } else {
+                $(sel).click(method);
+            }
+        }
+
+        $(function(){
+            var responsiveState = $(".responsiveState");
+            var currentState = null;
+            var menu_displayed = false;
+
+
+            tapOrClick("#menu_icon", function(){
+                if (menu_displayed === false){
+                    $("#menu, #menu_icon, header").addClass("active");
+                    menu_displayed = true;
+                } else {
+                    $("#menu, #menu_icon, header").removeClass("active");
+                    menu_displayed = false;
+                }
+            });
+
+            setTimeout(function(){
+                // Hide the address bar!
+                window.scrollTo(0, 1);
+                currentState = responsiveState.height();
+            }, 0);
+
+            $(window).resize(function(){
+                var rState = responsiveState.height();
+                if (rState !== currentState){
+                    currentState = rState;
+                    if (currentState === 2 && menu_displayed){
+                        $("#menu_icon").click();
+                    }
+
+
+                }
+
+            });
+
+        });
+

@@ -1,19 +1,25 @@
 html, body 
-    background-color #222
+    background-color #2e2e2e
     color white
     padding 0
     margin 0
     font-size 18px
-    font-family: 'Novecentosanscondensed-DemiBold'
+    // font-family: 'Novecentosanscondensed-DemiBold'
+    font-family 'Source Sans Pro', sans-serif
+    font-weight 200
+    height 2000px
 
 header
     position fixed
-    top -15px
-    left 11px
-    font-size 80px
+    top 10px
+    left 14px
+    font-size 36px
     color #aaa
-    transition transform 250ms ease-in-out
+    transition transform 200ms ease-in-out, color 200ms ease-in-out
     whitespace nowrap
+    font-weight 600
+    &.active
+        color black
 
 a, a:visited
     color #666
@@ -22,53 +28,80 @@ a, a:visited
     &:hover
         color #444
     &.sel
-        color #aaa
+        color #EFAE7A
         cursor default
+
+#menu_icon
+    position fixed
+    top 7px
+    right 5px
+    color #aaa
+    font-size 25px
+    display none
+    transition all 200ms ease-in-out
+    cursor pointer
+    &:hover
+        color #aaa
+    &.active
+        color black
 
 
 #menu
     position fixed
-    top 0
+    top 25px
     right 0
-    font-size 32px
+    font-size 20px
+    transition height 300ms ease-in-out, opacity 300ms ease-in-out
     ul
         list-style-type none
-        padding-top 0px
-        transition all 200ms ease-in-out
+        padding 0px
+        margin 0px
         li
             display inline
             padding 0px 30px 0px 0px
+            transition padding 200ms ease-in-out
             &:last-child 
                 padding 0px 17px 0px 0px
 
 .topic_heading
-    background-color #111
-    color #aaa
-    position absolute
-    top 72px
+    background linear-gradient(top, #181818, black)
+    border-top 1px solid #111
+    border-bottom 1px solid #333
+    // background-color #111
+    color #EFAE7A
+    position fixed
+    top 62px
     left 0px
     right 0px
-    height 40px
-    font-size 30px
-    padding 4px 0px 0px 11px
+    height 36px
+    font-size 22px
+    padding 4px 0px 0px 15px
+    font-weight 400
     transition all 200ms ease-in-out
 
-@media only screen and (max-width: 992px)
-    #menu
-        font-size 24px
-        ul
-            padding-top 13px
-            li
-                padding-right 20px
+.responsiveState
+    display none
+    height 1px
+
+// @media only screen and (max-width: 992px)
+//     #menu
+//         font-size 24px
+//         ul
+//             padding-top 13px
+//             li
+//                 padding-right 20px
 
 @media only screen and (max-width: 768px)
-    header
-        transform scale(.8) translate(-50px, -5px)
+    .responsiveState
+        height 2px
+
+    // header
+    //     transform scale(.9) translate(-17px, 1px)
 
     #menu
-        font-size 20px
+        font-size 16px
+        top 29px
         ul
-            padding-top 15px
             li
                 padding-right 10px
 
@@ -76,18 +109,74 @@ a, a:visited
         top 62px
     
 
-// @media only screen and (max-width: 600px)
-//     header
-//         transform scale(.8) translate(-50px, -5px)
+@media only screen and (max-width: 600px)
+    .responsiveState
+        height 3px
+
+    #menu
+        z-index 1000
+        background linear-gradient(top, #181818, black)
+        border-top 1px solid #111
+        border-bottom 1px solid #333
+        padding 0px 15px
+        font-size 28px
+        left 0px
+        right 0px
+        top 46px
+        font-weight 200
+        opacity 0
+        height 0px
+        overflow hidden
+        ul
+            margin 0px
+            padding 10px 0px
+            li
+                padding-right 0px
+                padding-bottom 15px
+                display block
+        &.active
+            opacity 1
+            height 212px
+            display block
+
+
+    header
+        transform scale(.8) translate(-36px, -11px)
+
+    #menu_icon
+        display block
+
+    .topic_heading
+        top 46px
+        font-size 18px
+        height 30px
+        padding-top 5px
+
+    // @media only screen and (orientation:landscape)
+    //     #menu
+    //         font-size 24px
+    //         ul
+    //             li
+    //                 padding-bottom 5px
+    //         &.active
+    //             height 160px
+
 
 
 
 @media only screen and (max-width: 480px)
-    header
-        transform scale(.5) translate(-200px, -20px)
+    .responsiveState
+        height 4px
+//     header
+//         transform scale(.5) translate(-200px, -20px)
 
-    .topic_heading
-        top 46px
-        font-size 24px
-        height 32px
+//     #menu_icon
+//         font-size 25px
+//         right 10px
+//         top 10px
+
+//     .topic_heading
+//         top 46px
+//         font-size 24px
+//         height 32px
 
